@@ -1,0 +1,59 @@
+# 資産の台帳：45m 鏡のアンテナとビーム伝送系
+# 項目の定義はハブの assets/README.md を参照。
+#   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
+# 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から nro45m を移し、ビーム伝送系を加えた（判断記録 0006）。
+# 公開資料と40周年記念誌から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+#
+# nro45m は、ほかの運用リポジトリの台帳の part_of と depends_on から参照される。
+#
+# 出典の略記
+#   データシート：45m 鏡のデータシート https://www.nro.nao.ac.jp/en/projects/45m/datasheets/ （2026-11-18 に確認）
+#   障害情報：NRO45m 障害情報 https://www.nro.nao.ac.jp/projects/45m/projects-45m-trouble/ （2026年11月12日更新の版）
+#   経緯：ハブの history/README.md https://github.com/nobeyama-radio-observatory/nro-context/blob/main/history/README.md
+#   外部評価2023：国立天文台 外部評価（2023年度）野辺山宇宙電波観測所の報告書 https://www.nao.ac.jp/contents/about/reports/external-review/external-review-2023-nro.pdf
+#   40周年記念誌：『野辺山宇宙電波観測所40周年記念誌』2022年2月（国立国会図書館 請求記号 MB12-M7）。p.N はそのページ。
+#     書誌の詳細はハブの history/README.md の出典の略記。年次報告と食い違うときは年次報告を採る
+#   聞き取りYYYY-MM-DD(-n) 問N：interviews/YYYY-MM-DD(-n).md の問N
+
+- id: nro45m
+  name: 45m 電波望遠鏡
+  kind: アンテナ
+  status: 運用中
+  offered: 提供
+  introduced: 1982年（観測と共同利用の開始。試験観測は1981年）
+  maintenance:
+    by: 所内、メーカー
+    condition: >-
+      開所から40年たち老朽化が進み、老朽化対策、故障の修理、故障を防ぐ保守で性能を保っている。
+      主な補修：AZ レールの全面補修（2014年）、架台の全面塗装（2016年、31年ぶり）、副鏡の Z2 軸の修理（2018年）、
+      ホログラフィーによる鏡面の調整（2015年までに鏡面精度 78 μm rms）。
+      2026年11月に、駆動の制御架に異常表示が出たが駆動には影響がなく、メーカーと協力して調査中
+    effort: 未記入
+  renewal: 未記入
+  owner_role: 未定
+  maintainers: 未記入
+  docs: データシート
+  sources:
+    - 導入：経緯（沿革、45m 鏡のページ）
+    - 老朽化と主な補修：40周年記念誌 p.31〜33
+    - 保守：障害情報 Trouble ID 2026-5
+  note: 観測できる周波数は 20〜116 GHz（データシート）。外部評価2023 は、アンテナの故障の確率とほかの装置の寿命を評価するよう求め、アンテナと制御系に大きな改修が要る懸念を示している
+
+- id: beam-transmission
+  name: ビーム伝送系（鏡、ミラー切換、ビームスイッチ、校正装置）
+  kind: アンテナ
+  part_of: nro45m
+  depends_on: [nro45m]
+  status: 運用中
+  introduced: 装置の大半は 45m 鏡の運用開始の前後に作られ、30〜40年使われてきた
+  maintenance:
+    by: 所内
+    condition: >-
+      2016年から、制御をすべて PLC に置き換え、機械系を簡素にし、汎用品を多く使う方針で、1年に1台以上の速さで改修してきた。
+      第2・第3鏡に金を蒸着（2015年、雑音温度 30 K → 19 K）
+    effort: 未記入
+  renewal: 未記入
+  owner_role: 未定
+  maintainers: 未記入
+  sources:
+    - 導入と改修：40周年記念誌 p.31、p.42〜45
