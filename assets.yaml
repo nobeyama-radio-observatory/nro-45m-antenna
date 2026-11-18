@@ -41,7 +41,7 @@
 
 - id: beam-transmission
   name: ビーム伝送系（鏡、ミラー切換、ビームスイッチ、校正装置）
-  kind: 制御
+  kind: アンテナ
   part_of: nro45m
   depends_on: [nro45m]
   status: 運用中
