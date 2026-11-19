@@ -36,7 +36,11 @@
       ほかの部品は故障の予兆がなく突然壊れるため、寿命の見込みが立たない
   owner_role: アンテナチーム（装置システムグループ）
   maintainers: 2
-  docs: データシート
+  docs:
+    - 装置情報（Status Report。今季の能力の表） https://www.nro.nao.ac.jp/projects/45m/datasheets/ （ビームサイズと能率、ポインティングの精度と頻度の目安、ポインティング天体の一覧）
+    - アンテナのページ（能率の測定の年ごとの一覧） https://www.nro.nao.ac.jp/projects/45m/datasheets/antenna/
+    - 観測できる範囲（仰角、太陽からの離角、スカイライン）：観測計画の立案方法 https://www.nro.nao.ac.jp/projects/45m/proposals/how2plan/
+    - 強風、降雪、凍結、地震の中断の基準と格納の位置：望遠鏡運用のルール https://www.nro.nao.ac.jp/projects/45m/observations/regulations/ （2026-11-19 に確認）
   sources:
     - 導入：経緯（沿革、45m 鏡のページ）
     - 老朽化と主な補修：40周年記念誌 p.31〜33
